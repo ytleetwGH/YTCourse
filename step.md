@@ -1,3 +1,8 @@
+---
+layout: page
+title: 建立gitHub page步驟
+---
+
 # 使用Gemini建立gitHub page步驟
 建立新的網站並建立產生步驟，包含matlab、AI兩個課程
 
