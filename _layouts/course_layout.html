@@ -1,51 +1,101 @@
 ---
 layout: default
 ---
-<script>
-  document.title = "{{ page.title }} | {{ site.title }}";
-</script>
 
 <style>
-    /* 隱藏原本主題的 header, footer 和側邊欄按鈕 */
-    header, footer, aside#sidebar, a.button {
+    /* 1. 隱藏原本主題的 Header、Footer、GitHub 按鈕與側邊欄 */
+    header, footer, .site-footer, aside#sidebar {
         display: none !important;
     }
-  
-/* 隱藏頁底維護者與 GitHub Pages 產生資訊 */
-footer, .site-footer {
-    display: none !important;
-}  
-  
-/* 調整主內容區域的上方間距，確保內容不會頂到最上方 */
-.main-content {
-    padding-top: 50px;
-}    
-  
-    .course-container { display: flex; align-items: flex-start; }
-    .sidebar { width: 200px; background: #f4f4f4; padding: 15px; border-radius: 8px; position: sticky; top: 10px; height: fit-content; border: 1px solid #ddd; }
-    .main-content { flex: 1; padding-left: 30px; }
-    .sidebar ul { list-style: none; padding: 0; }
-    .sidebar li { margin-bottom: 10px; border-bottom: 1px solid #ccc; }
-    .sidebar a { text-decoration: none; color: #007bff; font-weight: bold; }
+
+    /* 2. 移除背景色，確保底部黑色區塊消失 */
+    body {
+        background-color: #ffffff !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 3. 滿版容器設定 */
+    .course-wrapper {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    /* 4. 左側目錄 (浮動側邊欄) */
+    .course-sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        border-right: 1px solid #dee2e6;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .course-sidebar h4 {
+        color: #333;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+    }
+
+    .course-sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .course-sidebar li {
+        margin-bottom: 15px;
+    }
+
+    .course-sidebar a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+    }
+
+    .course-sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    /* 5. 右側內容區 (滿版) */
+    .course-content {
+        flex: 1;
+        padding: 40px 60px;
+        background: white;
+    }
+
+    /* 移除 Architect 主題對 main-content 的寬度限制 */
+    .main-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 </style>
 
-<div class="course-container">
-    <div class="sidebar">
+<div class="course-wrapper">
+    <nav class="course-sidebar">
         {% if page.collection == 'matlab' %}
             <h4>📊 MATLAB 目錄</h4>
             <ul>
-                <li><a href="../matlab/ch01">CH01 矩陣運算</a></li>
-                <li><a href="../matlab/ch02">CH02 數據繪圖</a></li>
+                <li><a href="/YTCourse/matlab/ch01">CH01 矩陣運算</a></li>
+                <li><a href="/YTCourse/matlab/ch02">CH02 數據繪圖</a></li>
             </ul>
         {% elsif page.collection == 'ai' %}
-            <h4>🤖 AI 目錄</h4>
+            <h4>🤖 AI 課程目錄</h4>
             <ul>
-                <li><a href="../ai/ch01">CH01 AI 簡介</a></li>
-                <li><a href="../ai/ch02">CH02 神經網路</a></li>
+                <li><a href="/YTCourse/ai/ch01">CH01 AI 簡介</a></li>
+                <li><a href="/YTCourse/ai/ch02">CH02 神經網路</a></li>
             </ul>
         {% endif %}
-    </div>
-    <div class="main-content" markdown="1">
+        <hr>
+        <a href="/YTCourse/" style="color: #666; font-size: 0.9em;">⬅ 回到首頁</a>
+    </nav>
+
+    <main class="course-content">
         {{ content }}
-    </div>
+    </main>
 </div>
