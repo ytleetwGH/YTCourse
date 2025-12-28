@@ -13,6 +13,16 @@ title: HOME
 header {
     display: none !important;
 }    
+/* 隱藏頁底維護者資訊（選用，若想讓畫面更乾淨） */
+footer {
+    display: none !important;
+}
+
+/* 調整主內容區域的上方間距，避免內容太靠上 */
+.main-content {
+    padding-top: 50px;
+}
+    
     .card-container {
         display: flex;
         gap: 20px;
