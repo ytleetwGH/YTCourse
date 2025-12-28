@@ -11,9 +11,20 @@ layout: default
         display: none !important;
     }
   
-/* 隱藏頁底維護者與 GitHub Pages 產生資訊 */
+/* 1. 隱藏原本黑色背景的頁尾區塊 */
 footer, .site-footer {
     display: none !important;
+}
+
+/* 2. 移除 Architect 主題底部可能留下的背景色 */
+body {
+    background: #ffffff !important; /* 強制背景為白色，消除底部黑色 */
+}
+
+/* 3. 確保主容器不會因為高度不足而露出底部的底色 */
+.container-lg, .main-content {
+    background-color: #ffffff !important;
+    min-height: 100vh; /* 讓內容區至少佔滿整個螢幕高度 */
 }
 
 /* 調整主內容區域的上方間距，確保內容不會頂到最上方 */
