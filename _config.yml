@@ -1,0 +1,10 @@
+title: YT課程平台
+theme: jekyll-theme-architect
+
+collections:
+  matlab:
+    output: true
+    permalink: /matlab/:name
+  ai:
+    output: true
+    permalink: /ai/:name
