@@ -2,7 +2,6 @@
 
 ## 目錄結構說明
 ```text
-.
 ├── _config.yml              # 宣告課程集合 (matlab, ai)
 ├── index.md                 # 網站總首頁
 ├── _layouts/
