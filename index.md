@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 📚 程式課程學習中心
+title: YTLee課程講義
 ---
 
 # 歡迎來到我的線上講義
