@@ -1,0 +1,30 @@
+---
+layout: page
+---
+<style>
+    .course-wrapper { display: flex; align-items: flex-start; }
+    .sidebar { width: 220px; background: #f8f9fa; padding: 20px; border: 1px solid #ddd; position: sticky; top: 10px; height: fit-content; }
+    .content { flex: 1; padding-left: 30px; }
+    .sidebar ul { list-style: none; padding: 0; }
+    .sidebar li { margin-bottom: 8px; border-bottom: 1px solid #eee; }
+    .sidebar a { text-decoration: none; color: #333; font-size: 14px; }
+    .sidebar a:hover { color: #007bff; }
+</style>
+
+<div class="course-wrapper">
+    <div class="sidebar">
+        <strong>📚 課程章節</strong>
+        <ul id="menu">
+            {% if page.collection == 'matlab' %}
+                <li><a href="../ch01">CH01 矩陣運算</a></li>
+                <li><a href="../ch02">CH02 數據繪圖</a></li>
+            {% elsif page.collection == 'ai' %}
+                <li><a href="../ch01">CH01 機器學習入門</a></li>
+                <li><a href="../ch02">CH02 神經網路導論</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="content" markdown="1">
+        {{ content }}
+    </div>
+</div>
