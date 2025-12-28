@@ -13,13 +13,22 @@ title: HOME
 header {
     display: none !important;
 }    
-/* 隱藏頁底維護者資訊（選用，若想讓畫面更乾淨） */
-footer {
+
+/* 隱藏 Architect/Hacker 主題右側的按鈕與側邊資訊 */
+aside#sidebar {
     display: none !important;
 }
-/* 如果只想隱藏特定那兩行，但保留版權宣告，可以使用以下方式 */
-.site-footer {
+
+/* 針對某些版本的主題，按鈕可能在 header 或特定的 section 內 */
+.button, .view {
     display: none !important;
+}
+
+/* 讓主內容區域自動填滿，不再留出右側空間 */
+#main_content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
 }
     
     .card-container {
