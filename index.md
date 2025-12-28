@@ -30,6 +30,15 @@ aside#sidebar {
     max-width: 100% !important;
     margin-right: 0 !important;
 }
+/* 隱藏頁底維護者與 GitHub Pages 產生資訊 */
+footer, .site-footer {
+    display: none !important;
+}
+
+/* 調整主內容區域的上方間距，確保內容不會頂到最上方 */
+.main-content {
+    padding-top: 50px;
+}
     
     .card-container {
         display: flex;
