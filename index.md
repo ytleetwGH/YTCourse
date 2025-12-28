@@ -1,6 +1,6 @@
 ---
-layout: default
-title: YTLee課程講義
+layout: page
+title: HOME
 ---
 
 # YTLee課程講義
