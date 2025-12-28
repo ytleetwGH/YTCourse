@@ -2,7 +2,10 @@
 layout: default
 title: HOME
 ---
-
+/* 隱藏 Architect 主題的藍色頁首 */
+header {
+    display: none !important;
+}
 # YTLee課程講義
 
 請點選下方區塊開始學習。
