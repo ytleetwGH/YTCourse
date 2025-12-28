@@ -3,77 +3,85 @@ layout: default
 ---
 
 <style>
-    /* 1. 隱藏原本主題的 Header、Footer、GitHub 按鈕與側邊欄 */
+    /* 1. 隱藏主題預設的 Header, Footer 與右側 GitHub 按鈕 */
     header, footer, .site-footer, aside#sidebar {
         display: none !important;
     }
 
-    /* 2. 移除背景色，確保底部黑色區塊消失 */
+    /* 2. 移除所有寬度限制與邊距，這是達成滿版的關鍵 */
     body {
         background-color: #ffffff !important;
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 3. 滿版容器設定 */
+    /* 強行解除 Architect 主題 container-lg 的限制 */
+    .container-lg, .main-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 3. 建立左右並排的佈局 */
     .course-wrapper {
         display: flex;
+        width: 100vw; /* 使用螢幕全寬 */
         min-height: 100vh;
-        width: 100%;
     }
 
-    /* 4. 左側目錄 (浮動側邊欄) */
+    /* 4. 極致靠左的側邊欄 */
     .course-sidebar {
-        width: 250px;
+        width: 260px;
+        min-width: 260px;
         background-color: #f8f9fa;
-        border-right: 1px solid #dee2e6;
-        padding: 20px;
+        border-right: 1px solid #e1e4e8;
+        padding: 30px 20px;
         position: sticky;
         top: 0;
         height: 100vh;
         overflow-y: auto;
+        box-sizing: border-box;
     }
 
     .course-sidebar h4 {
-        color: #333;
-        border-bottom: 2px solid #007bff;
+        margin-top: 0;
+        font-size: 1.2em;
+        color: #24292e;
+        border-bottom: 2px solid #0366d6;
         padding-bottom: 10px;
     }
 
     .course-sidebar ul {
         list-style: none;
         padding: 0;
-        margin-top: 20px;
+        margin: 20px 0;
     }
 
     .course-sidebar li {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .course-sidebar a {
         text-decoration: none;
-        color: #007bff;
-        font-weight: 500;
+        color: #0366d6;
+        font-size: 16px;
     }
 
     .course-sidebar a:hover {
         text-decoration: underline;
     }
 
-    /* 5. 右側內容區 (滿版) */
+    /* 5. 滿版內容區 */
     .course-content {
-        flex: 1;
-        padding: 40px 60px;
-        background: white;
+        flex: 1; /* 自動填滿剩餘空間 */
+        padding: 40px 50px;
+        background: #ffffff;
+        box-sizing: border-box;
     }
 
-    /* 移除 Architect 主題對 main-content 的寬度限制 */
-    .main-content {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+    /* 修正內容區內文字的字體與排版 */
+    .course-content h1 { border-bottom: 1px solid #eaecef; padding-bottom: 10px; }
 </style>
 
 <div class="course-wrapper">
@@ -92,7 +100,7 @@ layout: default
             </ul>
         {% endif %}
         <hr>
-        <a href="/YTCourse/" style="color: #666; font-size: 0.9em;">⬅ 回到首頁</a>
+        <a href="/YTCourse/" style="color: #6a737d; font-size: 14px;">⬅ 回到首頁</a>
     </nav>
 
     <main class="course-content">
