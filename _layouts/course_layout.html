@@ -1,7 +1,16 @@
 ---
-layout: page
+layout: default
 ---
+<script>
+  document.title = "{{ page.title }} | {{ site.title }}";
+</script>
+
 <style>
+    /* 隱藏原本主題的 header, footer 和側邊欄按鈕 */
+    header, footer, aside#sidebar, a.button {
+        display: none !important;
+    }
+    
     .course-container { display: flex; align-items: flex-start; }
     .sidebar { width: 200px; background: #f4f4f4; padding: 15px; border-radius: 8px; position: sticky; top: 10px; height: fit-content; border: 1px solid #ddd; }
     .main-content { flex: 1; padding-left: 30px; }
