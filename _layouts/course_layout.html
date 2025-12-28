@@ -3,19 +3,19 @@ layout: default
 ---
 
 <style>
-    /* 1. 隱藏主題預設的 Header, Footer 與右側 GitHub 按鈕 */
+    /* 1. 隱藏主題預設的干擾元素 */
     header, footer, .site-footer, aside#sidebar {
         display: none !important;
     }
 
-    /* 2. 移除所有寬度限制與邊距，這是達成滿版的關鍵 */
+    /* 2. 強行破壞 Architect 主題的置中限制 */
     body {
         background-color: #ffffff !important;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* 強行解除 Architect 主題 container-lg 的限制 */
+    /* 關鍵：強制讓主題的容器變成 100% 寬度且不置中 */
     .container-lg, .main-content {
         max-width: 100% !important;
         width: 100% !important;
@@ -23,84 +23,65 @@ layout: default
         padding: 0 !important;
     }
 
-    /* 3. 建立左右並排的佈局 */
+    /* 3. 建立支援 RWD 的彈性佈局 */
     .course-wrapper {
         display: flex;
-        width: 100vw; /* 使用螢幕全寬 */
+        flex-wrap: wrap; /* 支援 RWD：寬度不足時自動換行 */
+        width: 100%;
         min-height: 100vh;
     }
 
-    /* 4. 極致靠左的側邊欄 */
+    /* 4. 極致靠左的目錄欄 */
     .course-sidebar {
-        width: 260px;
-        min-width: 260px;
-        background-color: #f8f9fa;
-        border-right: 1px solid #e1e4e8;
-        padding: 30px 20px;
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        overflow-y: auto;
+        width: 250px;
+        background-color: #f4f4f4;
+        border-right: 1px solid #ddd;
+        padding: 25px 20px;
         box-sizing: border-box;
-    }
-
-    .course-sidebar h4 {
-        margin-top: 0;
-        font-size: 1.2em;
-        color: #24292e;
-        border-bottom: 2px solid #0366d6;
-        padding-bottom: 10px;
-    }
-
-    .course-sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-    }
-
-    .course-sidebar li {
-        margin-bottom: 12px;
-    }
-
-    .course-sidebar a {
-        text-decoration: none;
-        color: #0366d6;
-        font-size: 16px;
-    }
-
-    .course-sidebar a:hover {
-        text-decoration: underline;
     }
 
     /* 5. 滿版內容區 */
     .course-content {
         flex: 1; /* 自動填滿剩餘空間 */
-        padding: 40px 50px;
-        background: #ffffff;
+        min-width: 300px; /* 確保在手機上不會縮得太小 */
+        padding: 30px;
+        background: white;
         box-sizing: border-box;
+        word-wrap: break-word; /* 支援長文字自動換行 */
     }
 
-    /* 修正內容區內文字的字體與排版 */
-    .course-content h1 { border-bottom: 1px solid #eaecef; padding-bottom: 10px; }
+    /* 6. RWD 手機版優化 */
+    @media (max-width: 768px) {
+        .course-sidebar {
+            width: 100%; /* 手機版目錄變成置頂全寬 */
+            height: auto;
+            position: relative;
+            border-right: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .course-content {
+            padding: 20px;
+        }
+    }
 </style>
 
 <div class="course-wrapper">
     <nav class="course-sidebar">
         {% if page.collection == 'matlab' %}
-            <h4>📊 MATLAB 目錄</h4>
-            <ul>
+            <h3 style="margin-top:0">📊 MATLAB</h3>
+            <ul style="list-style: none; padding: 0;">
                 <li><a href="/YTCourse/matlab/ch01">CH01 矩陣運算</a></li>
                 <li><a href="/YTCourse/matlab/ch02">CH02 數據繪圖</a></li>
             </ul>
         {% elsif page.collection == 'ai' %}
-            <h4>🤖 AI 課程目錄</h4>
-            <ul>
+            <h3 style="margin-top:0">🤖 AI 課程</h3>
+            <ul style="list-style: none; padding: 0;">
                 <li><a href="/YTCourse/ai/ch01">CH01 AI 簡介</a></li>
                 <li><a href="/YTCourse/ai/ch02">CH02 神經網路</a></li>
             </ul>
         {% endif %}
         <hr>
-        <a href="/YTCourse/" style="color: #6a737d; font-size: 14px;">⬅ 回到首頁</a>
+        <a href="/YTCourse/" style="color: #666; font-size: 0.9em; text-decoration: none;">⬅ 回到首頁</a>
     </nav>
 
     <main class="course-content">
