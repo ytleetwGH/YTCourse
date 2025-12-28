@@ -1,11 +1,9 @@
 ---
-layout: page
-title: YTLee課程講義
+layout: default
+title: YTLee課程講義 - 首頁
 ---
 
-# 歡迎來到我的線上講義
-
-這是一個專為 **MATLAB** 與 **AI** 學習者設計的免費資源平台。請點選下方區塊開始學習。
+# 歡迎來到 YTLee 課程講義平台
 
 <style>
     .card-container {
@@ -16,46 +14,44 @@ title: YTLee課程講義
     .card {
         flex: 1;
         padding: 20px;
-        border: 1px solid #e0e0e0;
+        /* 將背景改為透明或深灰色，邊框改為綠色 */
+        border: 2px solid #2ecc71; 
         border-radius: 12px;
-        background-color: #ffffff;
+        background-color: #1a1a1a; 
         text-align: center;
         transition: transform 0.2s, box-shadow 0.2s;
         text-decoration: none !important;
-        color: #333 !important;
+        /* 將文字顏色改為 Hacker 綠 */
+        color: #2ecc71 !important; 
     }
     .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        background-color: #f8fbff;
+        box-shadow: 0 0 15px #2ecc71;
+        background-color: #262626;
     }
     .card h2 {
         margin-top: 0;
-        color: #007bff;
-    }
-    .card p {
-        font-size: 0.9em;
-        color: #666;
+        color: #2ecc71;
     }
     .btn-start {
         display: inline-block;
         margin-top: 15px;
         padding: 8px 20px;
-        background-color: #007bff;
-        color: white !important;
+        background-color: #2ecc71;
+        color: #000 !important;
         border-radius: 5px;
         font-weight: bold;
     }
 </style>
 
 <div class="card-container">
-    <a href="./matlab/ch01" class="card">
+    <a href="/YTCourse/matlab/ch01" class="card">
         <h2>📊 MATLAB</h2>
         <p>矩陣運算、數據繪圖與科學計算基礎。</p>
         <span class="btn-start">開始學習</span>
     </a>
 
-    <a href="./ai/ch01" class="card">
+    <a href="/YTCourse/ai/ch01" class="card">
         <h2>🤖 AI 課程</h2>
         <p>機器學習導論與神經網路實作教學。</p>
         <span class="btn-start">開始學習</span>
@@ -63,7 +59,5 @@ title: YTLee課程講義
 </div>
 
 ---
-
 ### 📢 最新更新
-- **2025-12-28**: 新增 AI 課程第二章「神經網路」。
-- **2025-12-28**: 修正 MATLAB 側邊欄導覽連結。
+- **2025-12-28**: 成功切換為 Hacker 主題風格。
