@@ -17,10 +17,9 @@ header {
 footer {
     display: none !important;
 }
-
-/* 調整主內容區域的上方間距，避免內容太靠上 */
-.main-content {
-    padding-top: 50px;
+/* 如果只想隱藏特定那兩行，但保留版權宣告，可以使用以下方式 */
+.site-footer {
+    display: none !important;
 }
     
     .card-container {
