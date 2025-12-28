@@ -1,6 +1,6 @@
 ---
-layout: page
-title: 📚 課程學習中心
+layout: default
+title: YTLee課程講義
 ---
 
 # YTLee課程講義
