@@ -3,9 +3,9 @@ layout: page
 title: 📚 課程學習中心
 ---
 
-# 歡迎來到我的線上講義
+# YTLee課程講義
 
-這是一個專為 **MATLAB** 與 **AI** 學習者設計的免費資源平台。請點選下方區塊開始學習。
+請點選下方區塊開始學習。
 
 <style>
     .card-container {
