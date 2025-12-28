@@ -8,26 +8,28 @@ title: HOME
 請點選下方區塊開始學習。
 
 <style>
-/* 隱藏上方藍色 Header 與下方黑色 Footer */
-    header, footer, .site-footer, aside#sidebar {
+/* 隱藏上方藍色 Header */
+    header {
         display: none !important;
-    }
-
-    /* 全屏白色背景，消除黑色底色 */
-    body {
-        background-color: #ffffff !important;
-        margin: 0;
-        padding: 0;
-    }
-
-    .main-content {
-        padding-top: 50px;
-        max-width: 900px;
-        margin: 0 auto;
-        background: white;
-    }
-
+    }    
     
+/* 隱藏 Architect/Hacker 主題右側的按鈕與側邊資訊 */
+aside#sidebar {
+    display: none !important;
+}
+
+/* 針對某些版本的主題，按鈕可能在 header 或特定的 section 內 */
+.button, .view {
+    display: none !important;
+}
+
+/* 讓主內容區域自動填滿，不再留出右側空間 */
+#main_content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+}
+
     .card-container {
         display: flex;
         gap: 20px;
