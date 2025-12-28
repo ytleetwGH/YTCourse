@@ -1,8 +1,8 @@
 title: "YTL課程講義"
-description: MATLAB 與 AI 的課程講義
+<!-- description: MATLAB 與 AI 的課程講義-->
 theme: jekyll-theme-Architect
 baseurl: "/YTCourse"
-url: "https://ytleetwgh.github.io"
+<!-- url: "https://ytleetwgh.github.io"-->
 
 <!-- remote_theme: pmarsceill/just-the-docs-->
 collections:
