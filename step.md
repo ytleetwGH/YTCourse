@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: 建立gitHub page步驟
 ---
 
